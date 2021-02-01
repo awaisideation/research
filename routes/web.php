@@ -41,6 +41,12 @@ Route::get('/login', 'Auth\AuthController@login')->name('login');
 Route::post('/login', 'Auth\AuthController@authenticate');
 Route::get('logout', 'Auth\AuthController@logout')->name('logout');
 
-Route::get('/admins', 'AdminController@index')->name('index');
-Route::get('/admins/create', 'CollabController@create');
+Route::get('/admins', 'CollabController@index')->name('index');
+Route::get('/admins/edit{id}', 'CollabController@edit')->name('collab.edit');
+Route::put('/admins/edit', 'CollabController@update')->name('collab.update');
+
+
+Route::get('/admins/create', 'CollabController@create')->name('create.collab');
 Route::post('/admins/create', 'CollabController@store')->name('collab.create');
+Route::delete('/admins//{id}', 'CollabController@destroy')->name('collab.destroy');
+

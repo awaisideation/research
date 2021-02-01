@@ -22,12 +22,14 @@
                 </ul>
             </div>
             <div class="body">
-                <form method="POST" action="{{ route('collab.create') }}" enctype="multipart/form-data" id="">
+
+
+                <form method="POST" action="{{ route('collab.create') }}">
                     @csrf
                     <label for="name">Name</label>
                     <div class="form-group">
                         <div class="form-line">
-                            <input type="text" id="name" class="form-control" placeholder="Enter your name">
+                            <input type="text" id="name" class="form-control" name="name" placeholder="Enter your name">
                         </div>
                     </div>
 
@@ -35,7 +37,7 @@
                     <div class="form-group">
                         <div class="form-line">
                             {{--<input type="text" id="name" class="form-control" placeholder="Enter your name">--}}
-                            <textarea class="form-control" placeholder="Enter description"></textarea>
+                            <textarea class="form-control" placeholder="Enter description" name="description"></textarea>
                         </div>
                     </div>
 
